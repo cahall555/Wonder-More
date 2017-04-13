@@ -1,0 +1,137 @@
+/*navigation */
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #87CEFA;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "Verdana", Geneva, sans-serif;
+}
+
+li a:hover {
+    background-color: #4c88ad;
+}
+
+/* header image */
+
+
+img.header {
+	margin:0px;
+	position: relative;
+	border-radius: 0px 0px 25px 25px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	height: 50%;
+	width: 100%;
+	z-index: -2; /*places text in front of image */
+}	
+
+
+h1 {
+	position: relative;
+	color: white;
+	text-shadow:2px 1px black;
+	font-family: "Verdana", Geneva, sans-serif;
+	
+}
+
+div.h1rec {
+	position:absolute;
+	width: 50px;
+	margin:0px;
+	background: transparent;
+	text-align:center;
+	padding: 50px 30px 50px 80px;
+	border: 2px solid green;
+}
+
+
+#rectangle { 
+	position:absolute;
+	top: 10px;
+	margin: 125px;
+	opacity: 0.4; 
+	width: 500px; 
+	height: 550px; 
+	background: white; 
+
+}
+
+p.content {
+	position: relative;
+	top: 75px;
+	width: 95%;
+	text-align: justify;
+	text-indent: 20px;	
+	font-family: "Verdana", Geneva, sans-serif;	
+}
+
+/* diamond */
+
+.losange, .losange div {
+  margin: 0 auto;
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  z-index: -1;
+  background: #87CEFA;
+  
+}
+
+.losange {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.losange .los1 {
+  width: 255px;
+  height: 255px;
+  transform: rotate(-45deg) translateY(-74px);
+}
+
+/* Layer 2 Left image */
+img.L2Left {
+	margin:10px;
+	top:-150px;
+	position: relative;
+	border-radius: 25px 25px 25px 25px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	opacity: 0.6;
+	height: 45%;
+	width: 45%;
+	z-index: -2; /*places text in front of image */
+}
+
+/* Layer 2 Right image*/
+
+img.L2Right {
+	display: inline-block;
+	float: right;
+	margin: 10px;
+	top:-755px;
+	position: relative;
+	border-radius: 25px 25px 25px 25px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	opacity: 0.6;
+	height: 45%;
+	width: 45%;
+	z-index: -2; /*places text in front of image */
+}
+
