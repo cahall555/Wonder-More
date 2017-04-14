@@ -46,7 +46,7 @@ li a:hover {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	height: 500px;
 	width: 100%;
-	background: #87FAB3;
+	background: #87fab3;
 	z-index: -2; /*places text in front of image */
 }	
 
@@ -59,7 +59,7 @@ h1 {
 	
 }
 
-div.h1rec {
+.h1rec {
 	float: center;
 	width: 50px;
 	margin:0px;
@@ -114,32 +114,31 @@ p.content {
   transform: rotate(-45deg) translateY(-74px);
 }
 
-/* Layer 2 Left image */
-img.L2Left {
+/* Layer 2 Left */
+.L2Left {
 	margin:10px;
 	top:-150px;
 	position: relative;
 	border-radius: 25px 25px 25px 25px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	opacity: 0.6;
-	height: 45%;
-	width: 45%;
+	height: 500px;
+	width: 50%;
+	background: #fa8795;
 	z-index: -2; /*places text in front of image */
 }
 
-/* Layer 2 Right image*/
+/* Layer 2 Right*/
 
-img.L2Right {
-	display: inline-block;
+.L2Right {
 	float: right;
 	margin: 10px;
 	top:-755px;
-	position: relative;
 	border-radius: 25px 25px 25px 25px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	opacity: 0.6;
-	height: 45%;
-	width: 45%;
-	z-index: -2; /*places text in front of image */
+	height: 500px;
+	width: 50%;
+	background:#faed87;
+	z-index: 7; /*places text in front of image */
 }
 
