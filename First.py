@@ -1,2 +1,4 @@
-print "Hello World!"
->>> 5 + 12
+var= 5 + 12
+if var <= 17:
+	print "Hello World!"
+
