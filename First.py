@@ -1,4 +1,11 @@
-var= 5 + 12
-if var <= 17:
-	print "Hello World!"
+print("Hello World!")
+#build a list
+shoplist = []
+shoplist.append("Bread")
+shoplist.append("Milk")
+shoplist.append("Butter")
+shoplist.append("Apples")
+print(shoplist)
+
+
 
