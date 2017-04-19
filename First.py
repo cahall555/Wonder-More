@@ -34,6 +34,10 @@ president_l = " abraham lincolin "
 print(president_l.title().strip())
 print(president_l.title().lstrip())
 print(president_l.title().rstrip())
+#testing user input function
+myname = input("Enter your name: ")
+print("Hello, ", myname.title(),"!")
+
 
 
 
