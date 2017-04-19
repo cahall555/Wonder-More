@@ -21,5 +21,10 @@ print(first_dictionary)
 #for loop
 for word, definition in first_dictionary.items():
 	print("The word of the day is %s : %s" % (word, definition))
+#quote with space and new lines
+print("\n\n\tBlack care rarely sites behind a rider whose pace is fast enough. \n\t\t\t ~Theodore Roosevelt")
+
+
+
 	
 
