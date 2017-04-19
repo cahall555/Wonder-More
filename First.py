@@ -23,6 +23,18 @@ for word, definition in first_dictionary.items():
 	print("The word of the day is %s : %s" % (word, definition))
 #quote with space and new lines
 print("\n\n\tBlack care rarely sites behind a rider whose pace is fast enough. \n\t\t\t ~Theodore Roosevelt")
+#variable testing title() upper() lower()
+president = "theodore roosevelt"
+print(president)
+print(president.title())
+print(president.upper())
+print(president.lower())
+#variable testing strip with title
+president_l = " abraham lincolin "
+print(president_l.title().strip())
+print(president_l.title().lstrip())
+print(president_l.title().rstrip())
+
 
 
 
