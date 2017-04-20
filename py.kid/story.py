@@ -13,5 +13,6 @@ animal,". She named her",animal,animal_name.title(),".",main_char.title(), "and"
 "and eating",food,"together.\n\tOne day while out",activity,main_char.title(),"and",animal_name.title(),"became separated.")
 
 #insert first branch/user choice here
-separated = input("What would you do?")
+separated = input("What would you do? Go home and look")
 print("\n\t", main_char.title(), "decided to",separated,".")
+
