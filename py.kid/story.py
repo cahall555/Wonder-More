@@ -13,6 +13,9 @@ animal,". She named her",animal,animal_name.title(),".",main_char.title(), "and"
 "and eating",food,"together.\n\tOne day while out",activity,main_char.title(),"and",animal_name.title(),"became separated.")
 
 #insert first branch/user choice here
-separated = input("What would you do? Go home and look")
-print("\n\t", main_char.title(), "decided to",separated,".")
+separated = input("What would you do? Go home and look or stay where you are?")
+if "home" in separated:
+	print("\n\t", main_char.title(), "decided to",separated,". On the way home",main_char.title(), "ran into a friend )
+elif "stay" in separated:
+	print("\n\t", main_char.title(), "decided to",separated,".")
 
