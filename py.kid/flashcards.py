@@ -8,7 +8,6 @@ a = int(1)
 #loop user through adding flascards. **currently working on dictionary method. 
 while (a <= fc_num):
 	print("Card %s of %s" % (a,fc_num))
-	flashcards = {}
 	class card:
 		def __init__(self,card):
 			self.card = card
@@ -20,6 +19,9 @@ while (a <= fc_num):
 				print
 	side1 = input("what would you like on side 1?")
 	side2 = input("what would you like on side 2?")
+	flashcards = {}
+	for fc_num in range(len(side1)):
+		flashcards[side1[fc_num]] = card[fc_num]
 	a = a + 1
 
 # what order would you like the cards, suffled, not shuffled
