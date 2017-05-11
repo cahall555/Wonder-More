@@ -17,10 +17,11 @@ while (a <= fc_num):
 		def side2 (self):
 			for line in self.card:
 				print
+	flashcards{}
 	side1 = input("what would you like on side 1?")
 	side2 = input("what would you like on side 2?")
-	flashcards = {}
-	for fc_num in range(len(side1)):
+	
+	for fc_num in range(fc_num)):
 		flashcards[side1[fc_num]] = card[fc_num]
 	a = a + 1
 
