@@ -13,7 +13,9 @@ def extractDollar(line):
 def extractApttype(line):
     return re.search('[0-5] Bed [0-5] Bath',line).group(0)
 def extractProperty(line):
-    return re.search('[a-zA-Z]{1,40}(?= situated)',line).group(0)
+    return re.search('[a-zA-Z]{1,20} [a-zA-Z]{1,20}(?= situated)',line).group(0)
+def extractResident(line):
+    return re.search('[a-zA-Z]{1,20} [a-zA-Z]{1,20}',line).group(0)
 
 file = open('step1','rb')
 reader = PyPDF2.PdfFileReader(file)
@@ -63,9 +65,16 @@ for line in lease:
         basic = line.split(':')
         for index in range(len(basic)):
             basicval = basic[index]
+            print index, basicval
             if "Apartment Community" in basicval:
                 aptcommunity = extractProperty(basic[index+1])
-
+    if "Resident(s)" in line:
+        resident = line.split(':')
+        for index in range(len(resident)):
+            resval = resident[index]
+            if "Resident(s)" in resval:
+                residentname = extractResident(resident[index+1])
+                print residentname
 print aptcommunity, start, end, apttype, petrent, shortterm, furniturefee, doubleocc, appfee
 print adminfee, securitydeposit, petdeposit, specialconcession, recurringconcession
 #print(lease)
