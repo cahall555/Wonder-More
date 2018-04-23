@@ -1,5 +1,5 @@
 import PyPDF2
-file = open('step1.pdf','rb')
+file = open('step1','rb')
 reader = PyPDF2.PdfFileReader(file)
 page = reader.getPage(0)
 lease = page.extractText()
