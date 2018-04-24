@@ -65,7 +65,6 @@ for line in lease:
         basic = line.split(':')
         for index in range(len(basic)):
             basicval = basic[index]
-            print index, basicval
             if "Apartment Community" in basicval:
                 aptcommunity = extractProperty(basic[index+1])
     if "Resident(s)" in line:
@@ -74,7 +73,20 @@ for line in lease:
             resval = resident[index]
             if "Resident(s)" in resval:
                 residentname = extractResident(resident[index+1])
-                print residentname
-print aptcommunity, start, end, apttype, petrent, shortterm, furniturefee, doubleocc, appfee
+    if "Additional Monthly Rent" in line:
+        rent = line.split('is')
+        for index in range(len(rent)):
+            rentval = rent[index]
+            #print index, rentval
+            #if "Base Rent for the Lease Term" in line:
+             #   baserent = extractDollar(rent[index+1])
+            if "Rent Payable" in line:
+                leasevalue = extractDollar(rent[index+1])
+                print leasevalue
+#leasetxt = open("leaseextract","w")
+header = ["Community Name", "Residents", "Lease Start", "Lease End", "Apartment Type", "Pet Rent", "Furniture Fee",
+ "Double Occupancy", "Application Fee", "Administrative Fee", "Security Deposit", "Pet Deposit", "One Time Concession", "Recurring Concession"]
+print header
+print aptcommunity, residentname, start, end, apttype, petrent, shortterm, furniturefee, doubleocc, appfee
 print adminfee, securitydeposit, petdeposit, specialconcession, recurringconcession
 #print(lease)
