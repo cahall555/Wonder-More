@@ -2,24 +2,31 @@
 import PyPDF2
 import pandas as pd
 import numpy as np
+import re
 
 file = open('21step1.pdf','rb')
 reader = PyPDF2.PdfFileReader(file)
 page = reader.getPage(0)
 lease = page.extractText()
-leasel = lease.split()
+lease = lease.split(" ")
+print(lease)
+class StateMachine:
+    """State machine to use parameters as token. Token unlocks machine and searches document for
+    parameters. Parameter results will be put in results when found. State machine starts in locked status"""
+    state = "locked"
 
-class StateMachine (State):
-    def__init__(self):
-        print (string(self))
+    def__init__(self, prameters, result):
+        self.parameters = ["Community","Resident(s)","Apartment Unit Type","Unit Number","Lease Term","Base Rent","Pet Rent","Short Term Premium","Furniture Fee","Double Occupancy Premium","Base Rent","Payable for Lease Term","Equal Monthly installments","Application Fee","Administrative Fee","Security Deposit","Pet Deposit","Rent Concession","Rent Credit","Guarantor's Name"]
+        self.result = []
+        StateMachine.state = "locked"
+
+    def start(self):
+
         
-    def findParameters(self, parameters)
-      """ search for lease parameters""""
-     for parameter in parameters:
-        """input search loop here"""
-parameters = ["Property","Resident(s)","Apartment Unit Type","Unit Number","Lease Term","Base Rent","Pert Rent","Short Term Premium","Furniture Fee","Double Occupancy Premium","Base Rent","Payable for Lease Term","Equal Monthly installments","Application Fee","Administrative Fee","Security Deposit","Pet Deposit","Rent Concession","Rent Credit","Guarantor's Name"]
-
-leasel = pd.DataFrame(leasel)
-findParameters(parameters)
+    def findParameters(self, parameters):
+        for index in range(len(lease)):
+            val = lease[index]
+            for parameter in parameters:
+                return.re.search()
 
 
