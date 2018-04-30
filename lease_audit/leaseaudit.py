@@ -4,29 +4,38 @@ import pandas as pd
 import numpy as np
 import re
 
-file = open('21step1.pdf','rb')
+file = open('step1','rb')
 reader = PyPDF2.PdfFileReader(file)
 page = reader.getPage(0)
-lease = page.extractText()
-lease = lease.split(" ")
-print(lease)
-class StateMachine:
-    """State machine to use parameters as token. Token unlocks machine and searches document for
-    parameters. Parameter results will be put in results when found. State machine starts in locked status"""
-    state = "locked"
+leaseText = page.extractText()
+leaseText = leaseText.split(" ")
+print(leaseText)
+class LeaseProcessing:
+   
+    def __init__(self, lease, prameters):
+        self.parameters = prameters
+        self.lease = lease 
+        self.result = {}
+    
 
-    def__init__(self, prameters, result):
-        self.parameters = ["Community","Resident(s)","Apartment Unit Type","Unit Number","Lease Term","Base Rent","Pet Rent","Short Term Premium","Furniture Fee","Double Occupancy Premium","Base Rent","Payable for Lease Term","Equal Monthly installments","Application Fee","Administrative Fee","Security Deposit","Pet Deposit","Rent Concession","Rent Credit","Guarantor's Name"]
-        self.result = []
-        StateMachine.state = "locked"
+    def findParameters(self):
+        currentKeyword = None
+        for index in range(len(self.lease)):
+            val = self.lease[index]
+            found = False
+            for parameter in self.parameters:
+                if parameter in val:
+                    currentKeyword = parameter
+                    found = True
+            if found:
+                print "Found keyword ", currentKeyword
+                self.result [currentKeyword]=[]
+            elif currentKeyword <> None:
+                self.result [currentKeyword].append(val)
 
-    def start(self):
 
-        
-    def findParameters(self, parameters):
-        for index in range(len(lease)):
-            val = lease[index]
-            for parameter in parameters:
-                return.re.search()
+params = ["Community","Resident(s)","Apartment Unit Type","Unit Number","Lease Term","Base Rent","Pet Rent","Short Term Premium","Furniture Fee","Double Occupancy Premium","Base Rent","Payable for Lease Term","Equal Monthly installments","Application Fee","Administrative Fee","Security Deposit","Pet Deposit","Rent Concession","Rent Credit","Guarantor's Name"]
 
-
+sm = LeaseProcessing(leaseText, params)
+sm.findParameters()
+print sm.result
