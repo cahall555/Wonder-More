@@ -23,9 +23,14 @@ for i, val in enumerate(description):
     newdescription=np.append(newdescription, keep)
 bill.append_column('NEW',newdescription)
 #Group by bill number and description to create a bill that is summarized and not detailed during upload.
-sumamount = bill.select('BILL_NO','POSTING_DATE','CREATED_DATE','DUE_DATE','NEW','AMOUNT','MEMO').groups(['BILL_NO',
-'POSTING_DATE','CREATED_DATE','DUE_DATE','NEW','MEMO'],sum).relabel('AMOUNT sum','AMOUNT')
+sumamount = bill.select('BILL_NO','CREATED_DATE','DUE_DATE','NEW','AMOUNT','MEMO').groups(['BILL_NO','CREATED_DATE','DUE_DATE','NEW','MEMO'],sum).relabel('AMOUNT sum','AMOUNT')
 totaldue = sumamount.select('BILL_NO','AMOUNT').group('BILL_NO',sum).relabel('AMOUNT sum','TOTAL_DUE')
+
+#Modifying description and total due columns.
+sumcount = bill.select('BILL_NO','NEW').groups(['BILL_NO','NEW']).select('count')#count of how many screenings of a particular type were done per property.
+linecount = sumamount.groups(['BILL_NO','MEMO']).select('count')#count of how many line items per property. To be used to correct TOTAL_DUE column.
+
+#Build final report
 final = sumamount.join('BILL_NO',totaldue)
 print(final)
 #Create billing upload
