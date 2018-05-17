@@ -23,7 +23,14 @@ setState("start")
 apartmentCommunity = ""
 furnitureFee = ""
 
-dict1 = {"Apartment":["looking for community"],"Community:":"Reading","Fee:":"looking for furniture fee"}
+searchd = {"Apartment":["looking for community"],"Community:":"Reading",
+    "Fee:":"looking for furniture fee"}
+
+stop = ["situated","Occupancy"]
+
+captureList = ['apartmentCommunity','furnitureFee']
+
+capture = {'apartmentCommunity':"",'furnitureFee':""}
 
 transition = {
     "state1": {
@@ -38,17 +45,17 @@ transition = {
     }
 }
 
-
 for word in leaseText:
-    for key in dict1:
-        if key in word:
-            setState(dict1.get(key))
-        elif currentState == "Reading":
-            if word == "situated":
-                currentState = ""
-            else:
-                apartmentCommunity += word +" "
-print(apartmentCommunity)
-
-             
-    
+    if word in searchd:
+        setState(searchd.get(word))
+    elif currentState == "Reading":
+        if word in stop:
+            currentState = ""
+            captureList.pop(0)
+            print(captureList)
+        else:
+            new_variable = ""
+            new_variable += word +" "
+            capture[captureList[0]] += new_variable
+            #apartmentCommunity += word +" "
+print(capture)    
